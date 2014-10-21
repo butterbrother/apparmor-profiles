@@ -1,0 +1,7 @@
+# Last Modified: Thu Aug 14 16:00:22 2014
+#include <tunables/global>
+
+/opt/kingsoft/wps-office/office6/wps {
+  #include <abstractions/kingsoft-common>
+}
+  

@@ -1,0 +1,53 @@
+#include <abstractions/audio>
+#include <abstractions/authentication>
+#include <abstractions/base>
+#include <abstractions/dbus-session>
+#include <abstractions/fonts>
+#include <abstractions/freedesktop.org>
+#include <abstractions/nameservice>
+#include <abstractions/nvidia>
+#include <abstractions/private-data/downloads-allow>
+#include <abstractions/private-data/unity-allow>
+#include <abstractions/user-tmp>
+
+
+/proc/filesystems r,
+/bin/dash rix,
+/bin/grep rix,
+/bin/uname rix,
+/etc/os-release r,
+/ r,
+/**/ r,
+
+owner @{HOME}/ r,
+owner @{HOME}/.Xauthority r,
+owner @{HOME}/.fonts/ rw,
+owner @{HOME}/.fonts/** rw,
+owner @{HOME}/.ICEauthority r,
+owner @{HOME}/.cache/Kingsoft/ rw,
+owner @{HOME}/.cache/Kingsoft/** rwmk,
+owner @{HOME}/.config/Kingsoft/ rw,
+owner @{HOME}/.config/Kingsoft/* rwk,
+owner @{HOME}/.config/Trolltech.conf rwk,
+owner @{HOME}/.config/user-dirs.dirs r,
+owner @{HOME}/.fontconfig/* rwmk,
+owner @{HOME}/.kingsoft/ rw,
+owner @{HOME}/.kingsoft/** rwk,
+owner @{HOME}/.local/share/data/Kingsoft/ rw,
+owner @{HOME}/.local/share/data/Kingsoft/** rwk,
+owner @{HOME}/Документы/* mrk,
+owner /home/documents/ mrk,
+owner /home/documents/** mrk,
+owner @{HOME}/Yandex.Disk/ rw,
+owner @{HOME}/Yandex.Disk/** rw,
+owner @{HOME}/Dropbox/ rw,
+owner @{HOME}/Dropbox/** mrwk,
+/opt/kingsoft/** mrwk,
+/run/cups/printcap r,
+/tmp/** rw,
+/usr/bin/dbus-send rix,
+/usr/bin/exo-open rix,
+/usr/bin/xdg-open rix,
+/usr/bin/xprop rix,
+/usr/share/icons/** rk,
+/etc/xdg/kingsoft.conf rmk,

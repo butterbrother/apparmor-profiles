@@ -1,0 +1,94 @@
+# Last Modified: Wed May 28 18:15:18 2014
+#include <tunables/global>
+
+/usr/bin/dropbox {
+  #include <abstractions/base>
+  #include <abstractions/fonts>
+  #include <abstractions/private-files>
+  #include <abstractions/private-files-strict>
+  #include <abstractions/python>
+  #include <abstractions/user-tmp>
+  #include <abstractions/nameservice>
+  #include <abstractions/private-data/backups-deny>
+  #include <abstractions/private-data/documents-deny>
+  #include <abstractions/private-data/downloads-deny>
+  #include <abstractions/private-data/images-deny>
+  #include <abstractions/private-data/mounts-deny>
+  #include <abstractions/private-data/music-deny>
+  #include <abstractions/private-data/special-deny>
+  #include <abstractions/private-data/tmp-deny>
+  #include <abstractions/private-data/unity-allow>
+  #include <abstractions/private-data/videos-deny>
+
+  /usr/sbin/uuidd rix,
+  /bin/dash rix,
+  /bin/grep rix,
+  /bin/readlink rix,
+  /bin/uname rix,
+  /bin/which rix,
+  /etc/udev/udev.conf r,
+  /proc/*/cmdline r,
+  /proc/*/fd/ r,
+  /proc/*/mounts r,
+  /proc/*/stat r,
+  /proc/filesystems r,
+  /proc/meminfo r,
+  /run/udev/data/* r,
+  /sbin/ldconfig rix,
+  /sys/devices/virtual/block/*/uevent r,
+  @{HOME}/.dropbox-dist/dropbox-lnx*/dropboxd rix,
+  /usr/bin/dbus-send rix,
+  /usr/bin/dirname rix,
+  /usr/bin/dropbox r,
+  /usr/bin/evince-thumbnailer rix,
+  /usr/bin/exo-open rix,
+  /usr/bin/nautilus rix,
+  /usr/bin/python2.7 ix,
+  /usr/bin/xdg-open rix,
+  /usr/bin/xprop rix,
+  /usr/lib/iceweasel/iceweasel Px,
+  /usr/lib{,32,64}/** mr,
+  /usr/share/applications/* r,
+  /usr/share/glib-2.0/schemas/gschemas.compiled r,
+  /usr/share/gvfs/remote-volume-monitors/ r,
+  /usr/share/gvfs/remote-volume-monitors/*.monitor r,
+  /usr/share/icons/ r,
+  /usr/share/icons/** r,
+  /usr/share/mime/mime.cache r,
+  /usr/share/nautilus/icons/ r,
+  /usr/share/nautilus/icons/**/ r,
+  /usr/share/pixmaps/ r,
+  /usr/share/poppler/** r,
+  /usr/share/themes/** r,
+  /usr/share/thumbnailers/ r,
+  /usr/share/thumbnailers/evince.thumbnailer r,
+  /var/lib/libuuid/clock.txt w,
+
+  owner @{HOME}/ r,
+  owner @{HOME}/.Xauthority r,
+  owner @{HOME}/.cache/dconf/user rw,
+  owner @{HOME}/.config/autostart/dropbox.desktop rw,
+  owner @{HOME}/.config/dconf/user r,
+  owner @{HOME}/.config/user-dirs.dirs r,
+  owner @{HOME}/.dropbox-dist/ rw,
+  owner @{HOME}/.dropbox-dist/** mrwk,
+  owner @{HOME}/.dropbox-dist/dropbox rix,
+  owner @{HOME}/.dropbox-dist/dropboxd rix,
+  owner @{HOME}/.dropbox-master/ rw,
+  owner @{HOME}/.dropbox-master/** mrwk,
+  owner @{HOME}/.dropbox/** mrwk,
+  owner @{HOME}/.gnome2/accels/nautilus rw,
+  owner @{HOME}/.gnome2/nautilus-scripts/ r,
+  owner @{HOME}/.gtk-bookmarks r,
+  owner @{HOME}/.local/share/applications/mimeapps.list r,
+  owner @{HOME}/.local/share/gvfs-metadata/* r,
+  owner @{HOME}/.local/share/icons/ r,
+  owner @{HOME}/.local/share/icons/** r,
+  owner @{HOME}/.thumbnails/ r,
+  owner @{HOME}/.thumbnails/** rw,
+  owner @{HOME}/.local/share/mime/ r,
+  owner @{HOME}/.local/share/mime/** r,
+  owner @{HOME}/Dropbox/ rw,
+  owner @{HOME}/Dropbox/** mrwk,
+
+}

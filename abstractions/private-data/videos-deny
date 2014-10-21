@@ -1,0 +1,7 @@
+# Restrict all videos
+deny @{HOME}/{v,V}ideo{,s}/ rw,
+deny @{HOME}/{v,V}ideo{,s}/** mrwk,
+
+deny @{HOME}/{в,В}идео/ rw,
+deny @{HOME}/{в,В}идео/** r,
+

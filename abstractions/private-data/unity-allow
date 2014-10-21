@@ -1,0 +1,5 @@
+  @{HOME}/{u,U}nity{,s}/ rw,
+  @{HOME}/{u,U}nity{,s}/** rwmk,
+
+  @{HOME}/{u,U}nion{,s}/ rw,
+  @{HOME}/{u,U}nion{,s}/** rw,

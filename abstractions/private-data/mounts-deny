@@ -1,0 +1,6 @@
+# Deny mount paths
+deny /media/ rw,
+deny /media/** mrwkl,
+
+deny /mnt/ rw,
+deny /mnt/** mrwkl,

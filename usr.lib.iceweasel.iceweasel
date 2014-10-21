@@ -1,0 +1,168 @@
+# Last Modified: Sat May 31 00:13:33 2014
+#include <tunables/global>
+
+/usr/lib/iceweasel/iceweasel {
+  #include <abstractions/X>
+  #include <abstractions/audio>
+  #include <abstractions/base>
+  #include <abstractions/dbus-session>
+  #include <abstractions/fonts>
+  #include <abstractions/gnome>
+  #include <abstractions/nameservice>
+  #include <abstractions/p11-kit>
+  #include <abstractions/private-files>
+  #include <abstractions/ubuntu-xterm>
+  #include <abstractions/user-tmp>
+  #include <abstractions/wutmp>
+  #include <abstractions/cups-client>
+
+  #include <abstractions/private-data/backups-deny>
+  #include <abstractions/private-data/documents-deny>
+  #include <abstractions/private-data/downloads-allow>
+  #include <abstractions/private-data/images-deny>
+  #include <abstractions/private-data/mounts-deny>
+  #include <abstractions/private-data/music-deny>
+  #include <abstractions/private-data/private-files-strict>
+  #include <abstractions/private-data/special-deny>
+  #include <abstractions/private-data/tmp-deny>
+  #include <abstractions/private-data/unity-allow>
+  #include <abstractions/private-data/videos-deny>
+
+  capability sys_ptrace,
+
+  network inet stream,
+  network inet6 stream,
+  @{PROC}/[0-9]*/net/if_inet6 r,
+  @{PROC}/[0-9]*/net/ipv6_route r,
+
+  / r,
+  /**/ r,
+
+  owner @{HOME}/.config/pulse/cookie rwkm,
+  /anon_hugepage//deleted r,
+  /bin/ln rix,
+  /bin/cat rix,
+  /bin/dash rix,
+  /bin/grep rix,
+  /bin/mktemp rix,
+  /bin/mv rix,
+  /bin/ps rix,
+  /bin/rm rix,
+  /bin/sed rix,
+  /bin/sleep rix,
+  /bin/which rix,
+  /dev/vboxuser rw,
+  /etc/X11/app-defaults/XTerm-color r,
+  /etc/axelrc r,
+  /etc/iceweasel/ r,
+  /etc/iceweasel/** r,
+  /etc/java-?-openjdk/ r,
+  /etc/java-?-openjdk/** r,
+  /etc/mailcap r,
+  /etc/mime.types r,
+  /etc/ssl/certs/java/cacerts r,
+  /etc/timezone r,
+  /etc/wgetrc r,
+  /etc/vdpau_wrapper.cfg r,
+  /usr/share/doc/ r,
+  /usr/share/doc/** rm,
+  /proc/ r,
+  /proc/*/ r,
+  /proc/*/cmdline r,
+  /proc/*/coredump_filter rw,
+  /proc/*/fd/ r,
+  /proc/*/loginuid r,
+  /proc/*/maps r,
+  /proc/*/mountinfo r,
+  /proc/*/net/if_inet6 r,
+  /proc/*/net/ipv6_route r,
+  /proc/*/stat r,
+  /proc/*/status r,
+  /proc/*/task/** r,
+  /proc/cpuinfo r,
+  /proc/filesystems r,
+  /proc/meminfo r,
+  /proc/stat r,
+  /proc/sys/crypto/fips_enabled r,
+  /proc/sys/kernel/pid_max r,
+  /proc/sys/net/ipv4/ip_local_port_range r,
+  /proc/tty/drivers r,
+  /proc/uptime r,
+  /sys/devices/system/cpu/ r,
+  /sys/devices/system/cpu/present r,
+  owner /tmp/** lk,
+  /tmp/** mrw,
+  /usr/bin/aria2c rix,
+  /usr/bin/axel rix,
+  /usr/bin/curl rix,
+  /usr/bin/cut rix,
+  /usr/bin/dbus-send rix,
+  /usr/bin/lockfile rix,
+  /usr/bin/wget rix,
+  /usr/bin/xdg-screensaver rix,
+  /usr/bin/xprop rix,
+  /usr/bin/xscreensaver-command rix,
+  /usr/bin/xset rix,
+  /usr/bin/xterm rix,
+  /usr/lib/iceweasel/iceweasel rix,
+  /usr/lib/iceweasel/plugin-container rix,
+  /usr/lib/iceweasel/webapprt-stub rix,
+  /usr/lib/iceweasel/mozilla-xremote-client rix,
+  /usr/bin/shred rix,
+  /usr/lib/jvm/java-[0-9]-openjdk-amd64/jre/bin/java rix,
+  /usr/lib/utempter/utempter rix,
+  /usr/lib/x86_64-linux-gnu/gstreamer1.0/gstreamer-1.0/gst-plugin-scanner rix,
+  /usr/lib/xulrunner-[0-9][0-9]{,.[0-9]}/plugin-container rix,
+  /usr/lib{,32,64}/** mr,
+  /usr/lib/x86_64-linux-gnu/** mr,
+  /usr/lib/i386-linux-gnu/** mr,
+  /usr/share/applications/defaults.list r,
+  /usr/share/applications/mimeapps.list r,
+  /usr/share/glib-2.0/schemas/gschemas.compiled r,
+  /usr/share/hunspell/ r,
+  /usr/share/hunspell/* r,
+  /usr/share/icedtea-web/** r,
+  /usr/share/iceweasel/** r,
+  /usr/share/java/* r,
+  /usr/share/javazi/** r,
+  /usr/share/libthai/*.tri r,
+  /usr/share/mime/ r,
+  /usr/share/mozilla/extensions/** r,
+  /usr/share/xulrunner-[0-9][0-9]{,.[0-9]}/ r,
+  /usr/share/xulrunner-[0-9][0-9]{,.[0-9]}/** r,
+  owner /{run,dev}/shm/pulse-shm* k,
+  /{run,dev}/shm/pulse-shm* rw,
+  owner @{HOME}/ r,
+  owner @{HOME}/.ICEauthority r,
+  owner @{HOME}/.Xauthority r,
+  owner @{HOME}/.adobe/ rw,
+  owner @{HOME}/.adobe/** rw,
+  owner @{HOME}/.cache/dconf/user rw,
+  owner @{HOME}/.cache/gstreamer*/ rw,
+  owner @{HOME}/.cache/gstreamer*/* rwmk,
+  owner @{HOME}/.cache/mozilla/ rw,
+  owner @{HOME}/.cache/mozilla/** rwk,
+  owner @{HOME}/.config/dconf/user r,
+  owner @{HOME}/.config/user-dirs.dirs r,
+  owner @{HOME}/.icedtea/ rw,
+  owner @{HOME}/.icedtea/** rwk,
+  owner @{HOME}/.java/fonts/** r,
+  owner @{HOME}/.local/share/ r,
+  owner @{HOME}/.local/share/applications/mimeapps.list r,
+  owner @{HOME}/.local/share/applications/mimeinfo.cache r,
+  owner @{HOME}/.local/share/gvfs-metadata/* r,
+  owner @{HOME}/.local/share/mime/ r,
+  owner @{HOME}/.local/share/mime/** r,
+  owner @{HOME}/.macromedia/ rw,
+  owner @{HOME}/.macromedia/** rw,
+  owner @{HOME}/.mozilla/ rw,
+  owner @{HOME}/.mozilla/** rwk,
+  owner @{HOME}/.pulse-cookie rwk,
+  owner @{HOME}/.pulse/ rw,
+  owner @{HOME}/.thumbnails/ rw,
+  owner @{HOME}/.thumbnails/** rw,
+  owner @{HOME}/.rcc/** rwmk,
+  owner @{HOME}/.gstreamer-0.10/ rw,
+  owner @{HOME}/.gstreamer-0.10/** rwmk,
+
+}

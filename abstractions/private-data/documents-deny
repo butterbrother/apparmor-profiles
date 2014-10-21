@@ -1,0 +1,8 @@
+  deny /home/{d,D}ocument{,s}/ rw,
+  deny /home/{d,D}ocument{,s}/** mkrw,
+
+  deny @{HOME}/{d,D}ocument{,s}/ rw,
+  deny @{HOME}/{d,D}ocument{,s}/** mkrw,
+
+  deny @{HOME}/{д,Д}окументы/ rw,
+  deny @{HOME}/{д,Д}окументы/** mrwk,

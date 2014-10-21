@@ -1,0 +1,5 @@
+@{HOME}/{d,D}ownload{,s}/ rw,
+@{HOME}/{d,D}ownload{,s}/** rwmk,
+
+@{HOME}/{з,З}агрузки/ rw,
+@{HOME}/{з,З}агрузки/** rmwk,

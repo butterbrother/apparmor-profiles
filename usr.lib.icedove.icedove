@@ -1,0 +1,129 @@
+# Last Modified: Thu May 29 17:37:14 2014
+#include <tunables/global>
+
+/usr/lib/icedove/icedove {
+  #include <abstractions/X>
+  #include <abstractions/base>
+  #include <abstractions/consoles>
+  #include <abstractions/fonts>
+  #include <abstractions/user-tmp>
+  #include <abstractions/nameservice>
+  #include <abstractions/private-data/backups-deny>
+  #include <abstractions/private-data/documents-allow-readonly>
+  #include <abstractions/private-data/downloads-allow>
+  #include <abstractions/private-data/images-deny>
+  #include <abstractions/private-data/mounts-deny>
+  #include <abstractions/private-data/music-deny>
+  #include <abstractions/private-data/special-deny>
+  #include <abstractions/private-data/tmp-deny>
+  #include <abstractions/private-data/unity-allow>
+  #include <abstractions/private-data/videos-deny>
+
+  capability sys_ptrace,
+
+
+  deny @{HOME}/.bash_history r,
+  audit deny @{HOME}/.ssh/ r,
+  audit deny @{HOME}/.ssh/** rw,
+  deny @{HOME}/.bash_logout r,
+  deny @{HOME}/.bashrc r,
+  deny @{HOME}/.lesshst r,
+  deny @{HOME}/.xsession-errors r,
+
+  /bin/which rix,
+  /bin/dash rix,
+  /usr/bin/exo-open rix,
+  /bin/ps rix,
+  /dev/vboxuser rw,
+  /etc/gnome-vfs-2.0/modules/ r,
+  /etc/gnome-vfs-2.0/modules/* r,
+  /etc/icedove/** r,
+  /etc/mailcap r,
+  /etc/mime.types r,
+  owner @{HOME}/ r,
+  owner @{HOME}/.ICEauthority r,
+  owner @{HOME}/.Xauthority r,
+  owner @{HOME}/.cache/dconf/user rw,
+  owner @{HOME}/.cache/icedove/ rw,
+  owner @{HOME}/.cache/icedove/** mrwk,
+  owner @{HOME}/.config/dconf/user r,
+  owner @{HOME}/.config/user-dirs.dirs r,
+  owner @{HOME}/.gnupg/ rw,
+  owner @{HOME}/.gnupg/** lmrwk,
+  owner @{HOME}/.gtk-bookmarks r,
+  owner @{HOME}/.icedove/ rw,
+  owner @{HOME}/.icedove/** mrwk,
+  owner @{HOME}/.local/share/ r,
+  owner @{HOME}/.local/share/*.xbel rw,
+  owner @{HOME}/.local/share/applications/ r,
+  owner @{HOME}/.local/share/applications/* rw,
+  owner @{HOME}/.local/share/mime/ rw,
+  owner @{HOME}/.local/share/mime/** rw,
+  owner @{HOME}/.local/share/recently-used.* rw,
+  owner @{HOME}/.local/share/icons/ r,
+  owner @{HOME}/.local/share/icons/** r,
+  owner @{HOME}/.thumbnails/ rw,
+  owner @{HOME}/.thumbnails/** rwmk,
+  owner @{HOME}/.config/xfce4/ rmk,
+  owner @{HOME}/.config/xfce4/** rmk,
+  owner @{HOME}/.local/share/xfce4/ rmk,
+  owner @{HOME}/.local/share/xfce4/** rmk,
+
+
+  / r,
+  /**/ r,
+
+  /proc/ r,
+  /proc/*/fd/ r,
+  /proc/*/mountinfo r,
+  /proc/*/stat r,
+  /proc/*/status r,
+  /proc/meminfo r,
+  /proc/stat r,
+  /proc/sys/kernel/pid_max r,
+  /proc/uptime r,
+  /sys/devices/system/cpu/ r,
+  /sys/devices/system/cpu/present r,
+  /usr/lib/icedove/icedove rix,
+  owner /tmp/** lk,
+  /tmp/** rw,
+  /usr/bin/dpkg-trigger rix,
+  /usr/bin/gpg rix,
+  /usr/bin/update-desktop-database rix,
+  /usr/bin/update-mime-database rix,
+  /usr/bin/update-mime-database.real rix,
+  /usr/lib/gnupg/gpgkeys_* rix,
+  /usr/lib/iceweasel/iceweasel Px,
+  /usr/lib{,32,64}/** mr,
+  /usr/lib/x86_64-linux-gnu/** mr,
+  /usr/lib/i386-linux-gnu/** mr,
+  /etc/xdg/xfce4/helpers.rc r,
+  /usr/share/xfce4/helpers/*.desktop r,
+  /usr/bin/firefox rix,
+  /usr/lib/x86_64-linux-gnu/xfce4/exo-1/exo-helper-1 rix,
+  /usr/share/ r,
+  /usr/share/applications/mimeapps.list r,
+  /usr/share/applications/ r,
+  /usr/share/applications/**.desktop r,
+  /usr/share/applications/*.cache r,
+  /usr/share/applications/defaults.list r,
+  /usr/share/applications/screensavers/ r,
+  /usr/share/glib-2.0/schemas/*.compiled r,
+  /usr/share/gvfs/remote-volume-monitors/ r,
+  /usr/share/gvfs/remote-volume-monitors/*.monitor r,
+  /usr/share/hunspell/ r,
+  /usr/share/hunspell/* r,
+  /usr/share/icedove/ r,
+  /usr/share/icedove/** r,
+  /usr/share/icons/ r,
+  /usr/share/icons/** r,
+  /usr/share/mime/ r,
+  /usr/share/mime/** r,
+  /usr/share/pixmaps/ r,
+  /usr/share/pixmaps/** r,
+  /usr/share/themes/ r,
+  /usr/share/themes/** r,
+  owner /var/tmp/** lk,
+  /var/tmp/** rw,
+
+}

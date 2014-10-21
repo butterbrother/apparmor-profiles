@@ -1,0 +1,39 @@
+# Last Modified: Wed May 28 13:19:16 2014
+#include <tunables/global>
+
+/usr/bin/yandex-disk {
+  #include <abstractions/base>
+  #include <abstractions/user-tmp>
+  #include <abstractions/nameservice>
+  #include <abstractions/private-data/backups-deny>
+  #include <abstractions/private-data/documents-deny>
+  #include <abstractions/private-data/downloads-deny>
+  #include <abstractions/private-data/images-deny>
+  #include <abstractions/private-data/mounts-deny>
+  #include <abstractions/private-data/music-deny>
+  #include <abstractions/private-data/private-files-strict>
+  #include <abstractions/private-data/special-deny>
+  #include <abstractions/private-data/tmp-deny>
+  #include <abstractions/private-data/unity-allow>
+  #include <abstractions/private-data/videos-deny>
+  #include <abstractions/private-files>
+  #include <abstractions/private-files-strict>
+
+
+  /bin/dash rix,
+  /etc/debian_version r,
+  /etc/issue r,
+  /etc/issue.net r,
+  owner @{HOME}/.config/autostart/Yandex.Disk.desktop w,
+  owner @{HOME}/.config/yandex-disk/ rw,
+  owner @{HOME}/.config/yandex-disk/** rw,
+  owner @{HOME}/Yandex.Disk/ rw,
+  owner @{HOME}/Yandex.Disk/** rw,
+  owner /home/external/user/Yandex.Disk/ rw,
+  owner /home/external/user/Yandex.Disk/** rw,
+  /proc/cpuinfo r,
+  /proc/stat r,
+  /usr/bin/yandex-disk mrix,
+  /usr/lib{,32,64}/** mr,
+
+}

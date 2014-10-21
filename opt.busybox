@@ -1,0 +1,30 @@
+# Last Modified: Tue May 27 00:15:28 2014
+#include <tunables/global>
+
+/opt/busybox {
+  #include <abstractions/base>
+  #include <abstractions/consoles>
+  #include <abstractions/nameservice>
+  #include <abstractions/user-tmp>
+
+
+  capability sys_ptrace,
+
+
+  deny / r,
+  deny /bin/ r,
+  deny /home/** r,
+  deny /usr/games/ r,
+  deny /usr/local/games/ r,
+
+  /opt/busybox mr,
+  /proc/ r,
+  /proc/*/cmdline r,
+  /proc/*/stat r,
+  owner /tmp/** lk,
+  /tmp/** rw,
+  /usr/bin/ r,
+  /usr/bin/pgrep rPix,
+  /usr/local/bin/ r,
+
+}

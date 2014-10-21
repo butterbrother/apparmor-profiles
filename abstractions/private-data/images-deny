@@ -1,0 +1,8 @@
+deny @{HOME}/{i,I}mage{,s}/ rw,
+deny @{HOME}/{i,I}mage{,s}/** mrwk,
+
+deny @{HOME}/{p,P}icture{,s}/ rw,
+deny @{HOME}/{p,P}icture{,s}/** mrwk,
+
+deny @{HOME}/{и,И}зображения/ rw,
+deny @{HOME}/{и,И}зображения/** mrwk,

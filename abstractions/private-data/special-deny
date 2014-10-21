@@ -1,0 +1,33 @@
+# Uncatigorizet
+deny @{HOME}/{r,R}estricted{,s}/ rw,
+deny @{HOME}/{r,R}estricted{,s}/** mrwk,
+
+deny @{HOME}/{p,P}{d,D}{f,F}/ rw,
+deny @{HOME}/{p,P}{d,D}{f,F}/** mkrw,
+
+deny @{HOME}/{s,S}haring{,s}/ rw,
+deny @{HOME}/{s,S}haring{,s}/** rwmk,
+
+deny @{HOME}/{b,B}uild{,s}/ rw,
+deny @{HOME}/{b,B}uild{,s}/** rwmk,
+
+deny @{HOME}/{i,I}nstall{,s}/ rw,
+deny @{HOME}/{i,I}nstall{,s}/** rwmk,
+
+deny @{HOME}/{o,O}{p,P}{t,T}/ rw,
+deny @{HOME}/{o,O}{p,P}{t,T}/** rwmk,
+
+deny @{HOME}/{s,S}{s,S}{h,H}/ rw,
+deny @{HOME}/{s,S}{s,S}{h,H}/** rwmk,
+
+deny @{HOME}/{s,S}ync{,s}/ rw,
+deny @{HOME}/{s,S}ync{,s}/** rwmk,
+
+deny @{HOME}/{v,V}irtual{,s}/ rw,
+deny @{HOME}/{v,V}irtual{,s}/** rwmk,
+
+deny @{HOME}/{о,О}бщедоступные/ rw,
+deny @{HOME}/{о,О}бщедоступные/** rwmk,
+
+deny @{HOME}/{ш,Ш}аблоны/ rw,
+deny @{HOME}/{ш,Ш}аблоны/** rwmk,

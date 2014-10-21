@@ -1,0 +1,8 @@
+  /home/{d,D}ocument{,s}/ r,
+  /home/{d,D}ocument{,s}/** mkr,
+
+  @{HOME}/{d,D}ocument{,s}/ r,
+  @{HOME}/{d,D}ocument{,s}/** rmk,
+
+  @{HOME}/{д,Д}окументы/ r,
+  @{HOME}/{д,Д}окументы/** rmk,

@@ -1,0 +1,6 @@
+# Restrict all downloads
+deny @{HOME}/{d,D}ownload{,s}/ rw,
+deny @{HOME}/{d,D}ownload{,s}/** rwmk,
+
+deny @{HOME}/{з,З}агрузки/ rw,
+deny @{HOME}/{з,З}агрузки/** rmwk,

@@ -1,0 +1,103 @@
+# Last Modified: Sat May 31 00:13:31 2014
+#include <tunables/global>
+
+/usr/bin/skype {
+  #include <abstractions/X>
+  #include <abstractions/audio>
+  #include <abstractions/base>
+  #include <abstractions/dbus-session>
+  #include <abstractions/fonts>
+  #include <abstractions/freedesktop.org>
+  #include <abstractions/kde>
+  #include <abstractions/nameservice>
+  #include <abstractions/nvidia>
+  #include <abstractions/user-tmp>
+  #include <abstractions/private-data/downloads-allow>
+  #include <abstractions/private-data/unity-allow>
+
+  #include <abstractions/private-data/backups-deny>
+  #include <abstractions/private-data/documents-deny>
+  #include <abstractions/private-data/downloads-allow>
+  #include <abstractions/private-data/images-deny>
+  #include <abstractions/private-data/mounts-deny>
+  #include <abstractions/private-data/music-deny>
+  #include <abstractions/private-data/private-files-strict>
+  #include <abstractions/private-data/special-deny>
+  #include <abstractions/private-data/tmp-deny>
+  #include <abstractions/private-data/unity-allow>
+  #include <abstractions/private-data/videos-deny>
+
+  deny /etc/iceweasel/ r,
+  deny /etc/iceweasel/** rmk,
+  deny @{HOME}/.mozilla/ rw,
+  deny @{HOME}/.mozilla/** mrwk,
+  deny @{HOME}/.cache/mozilla/ rw,
+  deny @{HOME}/.cache/mozilla/** mrwk,
+  deny /sys/devices/**/power_supply/AC/online r,
+  deny /sys/devices/**/usb*/*/id{,Product,Vendor} r,
+
+  /bin/grep rix,
+  /bin/which rix,
+  /usr/bin/notify-send rix,
+  /dev/ r,
+  /dev/video[0-9] mrw,
+  /etc/xdg/xfce4/* r,
+  owner @{HOME}/ r,
+  owner @{HOME}/.ICEauthority r,
+  owner @{HOME}/.Skype/ rw,
+  owner @{HOME}/.Skype/** rwk,
+  owner @{HOME}/.Xauthority r,
+  owner @{HOME}/.config/Trolltech.conf rwk,
+  owner @{HOME}/.config/xfce/ r,
+  owner @{HOME}/.config/xfce4/** rmk,
+  owner @{HOME}/.local/share/xfce4/ r,
+  owner @{HOME}/.local/share/xfce4/** rmk,
+  owner @{HOME}/.fontconfig/* rwmk,
+  owner @{HOME}/.pulse-cookie rwk,
+  owner @{HOME}/.config/pulse/cookie rmk,
+  owner @{HOME}/.pulse/ r,
+  owner @{HOME}/.config/Skype/ rw,
+  owner @{HOME}/.config/Skype/** rwmk,
+  owner @{HOME}/.kde/share/config/kioslaverc r,
+  /sys/devices/system/cpu/cpu[0-9]/cpufreq/scaling_max_freq r,
+  /proc/*/fd/ r,
+  /proc/*/net/arp r,
+  /proc/*/net/route r,
+  /proc/*/stat r,
+  /proc/*/task/ r,
+  /proc/*/task/*/stat r,
+  /proc/filesystems r,
+  /proc/sys/kernel/osrelease r,
+  /proc/sys/kernel/ostype r,
+  /sys/devices/system/cpu/ r,
+  /tmp/* rwk,
+  /usr/bin/dbus-send rix,
+  /usr/bin/exo-open rix,
+  /usr/bin/sensible-browser rix,
+  /usr/bin/skype mr,
+  /usr/bin/xdg-open rix,
+  /usr/bin/xprop rix,
+  /usr/lib/iceweasel/iceweasel Px,
+  /usr/lib/x86_64-linux-gnu/xfce4/exo-1/exo-helper-1 rix,
+  /usr/lib{,32,64}/** mr,
+  /usr/lib/x86_64-linux-gnu/** mr,
+  /usr/lib/i386-linux-gnu/** mr,
+  /usr/share/icons/** rmk,
+  /usr/share/skype/** rmk,
+  /usr/share/skype/ rmk,
+  /usr/share/themes/** rmk,
+  /usr/share/ r,
+  /usr/share/**/ r,
+  /usr/share/poppler/ r,
+  /usr/share/poppler/** rmk,
+  /usr/share/xfce4/helpers/*.desktop r,
+  /var/cache/libx11/compose/* r,
+  /var/cache/fontconfig/ r,
+  /var/cache/fontconfig/* r,
+  /usr/share/gvfs/remote-volume-monitors/ r,
+  /usr/share/gvfs/remote-volume-monitors/* r,
+  /usr/bin/firefox rix,
+  owner /{run,dev}/shm/pulse-shm* k,
+  /{run,dev}/shm/pulse-shm* rw,
+
+}

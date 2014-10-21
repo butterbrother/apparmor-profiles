@@ -1,0 +1,35 @@
+# Last Modified: Wed Sep 24 18:35:10 2014
+#include <tunables/global>
+
+/home/user/opt/btsync/btsync flags=(complain) {
+  #include <abstractions/base>
+  #include <abstractions/nameservice>
+  #include <abstractions/user-tmp>
+  #include <abstractions/private-data/downloads-allow>
+  #include <abstractions/private-data/unity-allow>
+
+  #include <abstractions/private-data/backups-deny>
+  #include <abstractions/private-data/documents-deny>
+  #include <abstractions/private-data/downloads-allow>
+  #include <abstractions/private-data/images-deny>
+  #include <abstractions/private-data/mounts-deny>
+  #include <abstractions/private-data/music-deny>
+  #include <abstractions/private-data/private-files-strict>
+  #include <abstractions/private-data/special-deny>
+  #include <abstractions/private-data/tmp-deny>
+  #include <abstractions/private-data/unity-allow>
+  #include <abstractions/private-data/videos-deny>
+
+  capability net_raw,
+  capability net_broadcast,
+  network inet stream,
+  network inet6 stream,
+
+  / r,
+  /**/ r,
+  owner @{HOME}/btsync/ mrwk,
+  owner @{HOME}/btsync/** mrwk,
+  owner @{HOME}/opt/btsync/ mrwk,
+  owner @{HOME}/opt/btsync/** mrwk,
+  owner @{HOME}/opt/btsync/btsync mrwk,
+}

@@ -1,0 +1,5 @@
+# Uncatigorizet
+
+# Backups
+deny @{HOME}/{b,B}ackup{,s}/ rw,
+deny @{HOME}/{b,B}ackup{,s}/** mrwk,

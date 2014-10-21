@@ -1,0 +1,7 @@
+# Deny all music
+deny @{HOME}/{m,M}usic{,s}/ rw,
+deny @{HOME}/{m,M}usic{,s}/** mrwk,
+
+deny @{HOME}/{м,М}узыка/ rw,
+deny @{HOME}/{м,М}узыка/** mrwk,
+

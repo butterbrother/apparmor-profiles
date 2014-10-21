@@ -1,0 +1,7 @@
+# Last Modified: Thu Aug 14 16:00:22 2014
+#include <tunables/global>
+
+/opt/kingsoft/wpp-office/office6/wpp {
+  #include <abstractions/kingsoft-common>
+}
+  
